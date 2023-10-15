@@ -22,7 +22,7 @@ class UserController extends Controller
     public function index()
     {
         
-        $users = User::with('roles')->get();
+        $users = User::with('roles')->paginate(10);
 
         return view('admin.user.index', ['users' => $users]);
     }
@@ -40,14 +40,14 @@ class UserController extends Controller
             'name' => ['required','max:255'],
             'email' => ['required','email','unique:users','max:255'],
             'password' => ['required','max:255','confirmed'],
-            'roles' => ['required','min:1']
+            'role' => ['required']
         ]);
         
         $user = User::create($validatedData);
 
         $user->update(['password'=> Hash::make($request->password)]);
 
-        $user->roles()->sync($request->get('roles'));
+        $user->roles()->sync($request->get('role'));
 
         return redirect()->route('users.index')->with('success', '¡Usuario creado con éxito!');
     }

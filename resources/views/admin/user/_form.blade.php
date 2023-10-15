@@ -33,7 +33,7 @@
         @forelse($roles as $role)
         <li>
             <label>
-                {!! Form::checkbox('roles[]', $role->id, null) !!}
+                {!! Form::radio('role', $role->id , !empty($user) ? ($user->roles->first()->id == $role->id ? true : false) : null ) !!}
                 {{ $role->name }}
                 {{-- <em>({{$role->description}})</em> --}}
             </label>

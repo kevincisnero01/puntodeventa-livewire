@@ -70,12 +70,13 @@
                                 </a>
                                 <!--eliminar-->
                                 <form method="POST" action="{{route('users.destroy',$user)}}" id="delete-item_{{$user->id}}" class="d-inline">
-                                    {{ csrf_field() }}
-                                    {{ method_field('DELETE') }}
+                                    @csrf
+                                    @method('DELETE')
 
-                                    <button type="button" 
+                                    <button type="submit" title="Eliminar"
                                         class="btn btn-danger delete-confirm"
-                                        onclick="confirmDelete('delete-item_{{$user->id}}')" title="Eliminar">
+                                        onclick="return confirm('¿Estas seguro que quieres eliminar este registro?');"
+                                        >
                                         <i class="far fa-trash-alt"></i>
                                     </button>
                                 </form>
@@ -84,6 +85,10 @@
                         @endforeach
                     </tbody>
                 </table>
+                <!--paginacion-->
+                <div>
+                    {{ $users->links('pagination::bootstrap-5') }}
+                </div>
             </div>
         </div>
     </div>
