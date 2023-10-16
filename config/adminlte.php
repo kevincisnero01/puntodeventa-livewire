@@ -303,6 +303,11 @@ return [
             'route'  => 'roles.index',
             'icon' => 'fas fa-fw fa-lock',
         ],
+        [
+            'text' => 'Categorias',
+            'route'  => 'categories.index',
+            'icon' => 'fas fa-bookmark',
+        ],
         // [
         //     'text'    => 'multilevel',
         //     'icon'    => 'fas fa-fw fa-share',
