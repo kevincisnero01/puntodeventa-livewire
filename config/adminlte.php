@@ -308,6 +308,11 @@ return [
             'route'  => 'categories.index',
             'icon' => 'fas fa-bookmark',
         ],
+        [
+            'text' => 'Proveedores',
+            'route'  => 'providers.index',
+            'icon' => 'fas fa-truck',
+        ],
         // [
         //     'text'    => 'multilevel',
         //     'icon'    => 'fas fa-fw fa-share',
