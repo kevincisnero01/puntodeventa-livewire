@@ -313,6 +313,11 @@ return [
             'route'  => 'providers.index',
             'icon' => 'fas fa-truck',
         ],
+        [
+            'text' => 'Productos',
+            'route'  => 'products.index',
+            'icon' => 'fas fa-box',
+        ],
         // [
         //     'text'    => 'multilevel',
         //     'icon'    => 'fas fa-fw fa-share',
