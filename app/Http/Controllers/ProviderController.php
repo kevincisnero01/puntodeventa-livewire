@@ -86,7 +86,7 @@ class ProviderController extends Controller
             ]
         ]);
 
-        $provider->update($request->all());
+        $provider->update($validatedData);
 
         return redirect()->route('providers.index')->with('success', '¡Proveedor actualizado con éxito!');
     }
