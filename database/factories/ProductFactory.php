@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\ProductStatusEnum;
 use App\Models\Category;
 use App\Models\Provider;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -30,7 +31,7 @@ class ProductFactory extends Factory
             'sell_price' => 10,
             'short_description' => fake()->sentence(),
             'long_description' => fake()->sentence(5),
-            'status' => fake()->randomElement(['DRAFT','SHOP','POS','BOTH','DISABLED']),
+            'status' => fake()->randomElement(ProductStatusEnum::values()),
             'category_id' => Category::all()->random()->id,
             'provider_id' => Provider::all()->random()->id,
         ];

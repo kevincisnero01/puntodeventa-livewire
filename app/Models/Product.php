@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\ProductStatusEnum;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,6 +22,8 @@ class Product extends Model
         'category_id',
         'provider_id',
     ];
+
+    protected $casts = ['status_enum' => ProductStatusEnum::class];
 
     public function getRouteKeyName(){
         return 'slug';
@@ -51,6 +54,8 @@ class Product extends Model
                 break;
         }
     }
+
+
 
 
 }
