@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->string('ci',10)->unique(); //incluye la posibilidad de V-12345678 
-            $table->string('rif',13)->unique(); //incluye la posibilidad de J-123456789-A
+            $table->string('ci',10)->unique()->nullable(); //incluye la posibilidad de V-12345678 
+            $table->string('rif',13)->unique()->nullable(); //incluye la posibilidad de J-123456789-A
             $table->text('address')->nullable();
             $table->string('phone', 20); //incluye la posibilidad de +58 0412-1234567
             $table->string('email');

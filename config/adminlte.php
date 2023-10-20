@@ -318,6 +318,11 @@ return [
             'route'  => 'products.index',
             'icon' => 'fas fa-box',
         ],
+        [
+            'text' => 'Clientes',
+            'route'  => 'customers.index',
+            'icon' => 'fas fa-users',
+        ],
         // [
         //     'text'    => 'multilevel',
         //     'icon'    => 'fas fa-fw fa-share',
