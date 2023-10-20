@@ -11,7 +11,7 @@ class Purchase extends Model
 
     protected $fillable = [
         'provider_id',
-        'user_id',
+        'customer_id',
         'purchase_date',
         'tax',
         'total',
@@ -19,7 +19,7 @@ class Purchase extends Model
         'picture',
     ];
 
-    public function user(){
+    public function customer(){
         return $this->belongsTo(User::class);
     }
 

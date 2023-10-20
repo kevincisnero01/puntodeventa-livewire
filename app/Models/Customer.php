@@ -17,4 +17,19 @@ class Customer extends Model
         'phone',
         'email',
     ];
+
+    public function purchases(){
+        return $this->hasMany(Purchase::class);
+    }
+
+    public function isNatural()
+    {
+        return !empty($this->ci);
+    }
+
+    public function isJuridico()
+    {
+        return !empty($this->rif);
+    }
+
 }
